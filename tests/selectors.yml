@@ -1,0 +1,25 @@
+# Form Selectors
+Self Link: "a.self-link"
+test: "form#name_form input[name=submit]"
+first name box: "form#name_form input[name=first_name]"
+gender: "form#name_form select[name=gender]"
+cars: "form#name_form select[name=cars]"
+terms: "form#name_form input[name=terms]"
+adverts: "form#name_form input[name=adverts]"
+file upload input: "form#name_form input[name=file_upload]"
+
+#Elements Selectors
+Page: "div.main"
+JumboTron: "div.jumbotron"
+Widget: "div.main div.widget"
+Widget Area Two: "div.area_two"
+Widget Area Three: "div.area_three"
+Test Box: "testframe"
+IDIndex0: 0
+IDIndex1: 1
+Hidden Div: "#secret-container"
+Wait Test: "#wait_test"
+Add: "#add"
+Remove: "#remove"
+Hide: "#hide"
+Unhide: "#unhide"

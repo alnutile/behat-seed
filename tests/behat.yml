@@ -1,0 +1,36 @@
+default:
+  paths:
+    features:  /opt/behat-seed/tests/features
+    bootstrap: /opt/behat-seed/tests/features/bootstrap
+  formatter:
+    name: pretty
+  extensions:
+    OrangeDigital\BusinessSelectorExtension\Extension:
+              urlFilePath: tests/urls.yml
+              selectorFilePath: tests/selectors.yml
+              assetPath: path
+              timeout: 30
+              contexts:
+                UIBusinessSelector: ~
+    Behat\MinkExtension\Extension:
+      default_session: selenium2
+      goutte: null
+      selenium2: ~
+      base_url: 'http://localhost:8080'
+      browser_name: safari
+
+saucelabs:
+  extensions:
+    Behat\MinkExtension\Extension:
+      default_session: selenium2
+      base_url: 'http://en.wikipedia.org/wiki/'
+      selenium2:
+        browser: chrome
+        wd_host: 'behat-seed:fc5b688a-f27c-4c73-a914-eb5d7e2cdf1e@ondemand.saucelabs.com/wd/hub'
+        capabilities:
+          platform: 'Windows 2012'
+          browser: chrome
+          version: '26'
+          name: 'Behat See'
+          command-timeout: '600'
+          max-duration: '600'
