@@ -196,6 +196,7 @@ bin/behat --config tests/behat.yml tests/features/pure_behat.feature
 ## RoadMap
 
   * Some more steps included. 
+  * Test file upload and other form subissions
   * Base Vagrant install file
 
 ## Links
