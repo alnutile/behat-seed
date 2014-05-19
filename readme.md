@@ -2,16 +2,13 @@
 
 The aim of this repo is to make it super easy to get going with behat. All you will need to get outside of this repo is
 
-  * Selenium Jar file
+  * Selenium Jar file download
   * Composer
-  * Behat Install
   * Saucelabs Account (Optional)
   
-
 After you install and setup those items you will be able to run tests locally or via Saucelabs and have a base setup to add new/custom steps as needed.
 
-
-### Selenium
+### Selenium Easy
 
 This is the one jar file you need
 
@@ -101,11 +98,11 @@ Tests will be where we store the behat.yml file and tests files. We will explore
 
 Tests has a folder called features. In here we store our actual tests called *.feature. Example wikipedia.feature. 
 
-Files is for showing vanilla behat.
+Files is for storing files for a vanilla behat example.
 
 Vendor is for composer as well as composer.lock and composer.json
 
-Bin which store behat only for now (really a symlink to the right area).
+Bin which stores behat only for now (really a symlink to the right area).
 
 Finally dummy-site to run a php server for use to quickly test against.
 
@@ -170,8 +167,6 @@ php -S 127.0.0.1:8080
 
 And you now can visit that url to see a site with numerous things to click and move.
 
-
-
 ## Now What
 
 With all of this setup, selenium running then you can just run, for example, this command
@@ -198,6 +193,11 @@ Even just testing linux/Mac so you can see that level of work.
 bin/behat --config tests/behat.yml tests/features/pure_behat.feature
 ~~~
 
+## RoadMap
+
+  * Some more steps included. 
+  * Base Vagrant install file
+
 ## Links
 
  * OrangeDigital https://github.com/orangedigital/business-selector-extension
@@ -208,7 +208,7 @@ bin/behat --config tests/behat.yml tests/features/pure_behat.feature
    * [build apis you wont hate](https://github.com/philsturgeon/build-apis-you-wont-hate/blob/master/chapter8/app/tests/behat/features/bootstrap/FeatureContext.php)
  
  * Slim PHP http://www.slimframework.com/
- 
+  
 
  
 
