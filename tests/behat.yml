@@ -1,7 +1,7 @@
 default:
   paths:
-    features:  /opt/behat-seed/tests/features
-    bootstrap: /opt/behat-seed/tests/features/bootstrap
+    features:  features
+    bootstrap: features/bootstrap
   formatter:
     name: pretty
   extensions:

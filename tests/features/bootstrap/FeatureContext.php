@@ -8,13 +8,45 @@ use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext,
     OrangeDigital\BusinessSelectorExtension\Context\BusinessSelectorContext;
-
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\BadResponseException;
 
 /**
  * Features context.
  */
 class FeatureContext extends BehatContext
 {
+
+    /**
+     * The Guzzle HTTP Client.
+     */
+    protected $client;
+
+    /**
+     * The current resource
+     */
+    protected $resource;
+
+    /**
+     * The request payload
+     */
+    protected $requestPayload;
+
+    /**
+     * The Guzzle HTTP Response.
+     */
+    protected $response;
+
+    /**
+     * The decoded response object.
+     */
+    protected $responsePayload;
+
+    /**
+     * The current scope within the response payload
+     * which conditions are asserted against.
+     */
+    protected $scope;
 
 
     private $output;
@@ -29,6 +61,22 @@ class FeatureContext extends BehatContext
     {
         $this->useContext('mink', new MinkContext($parameters));
         $this->useContext('BusinessSelectors', new BusinessSelectorContext($parameters));
+        $config = isset($parameters['guzzle']) && is_array($parameters['guzzle']) ? $parameters['guzzle'] : [];
+        $config['base_url'] = $parameters['base_url'];
+        $this->client = new Client($config);
+    }
+
+    /**
+     * Check if the port is 443 or 80 eg secure or not.
+     *
+     * @Then /^the page is secure$/
+     */
+    public function thePageIsSecure()
+    {
+        $current_url = $this->getSubcontext('mink')->getSession()->getCurrentUrl();
+        if(strpos($current_url, 'https') === false) {
+            throw new Exception('Page is not using SSL and is not Secure');
+        }
     }
 
     /**
