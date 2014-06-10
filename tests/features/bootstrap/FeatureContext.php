@@ -14,7 +14,7 @@ use GuzzleHttp\Exception\BadResponseException;
 /**
  * Features context.
  */
-class FeatureContext extends BehatContext
+class FeatureContext extends MinkContext
 {
 
     /**
@@ -59,11 +59,7 @@ class FeatureContext extends BehatContext
      */
     public function __construct(array $parameters)
     {
-        $this->useContext('mink', new MinkContext($parameters));
-        $this->useContext('BusinessSelectors', new BusinessSelectorContext($parameters));
-        $config = isset($parameters['guzzle']) && is_array($parameters['guzzle']) ? $parameters['guzzle'] : [];
-        $config['base_url'] = $parameters['base_url'];
-        $this->client = new Client($config);
+
     }
 
     /**
@@ -73,7 +69,7 @@ class FeatureContext extends BehatContext
      */
     public function thePageIsSecure()
     {
-        $current_url = $this->getSubcontext('mink')->getSession()->getCurrentUrl();
+        $current_url = $this->getSession()->getCurrentUrl();
         if(strpos($current_url, 'https') === false) {
             throw new Exception('Page is not using SSL and is not Secure');
         }
@@ -154,7 +150,6 @@ class FeatureContext extends BehatContext
             throw new Exception('Element not found');
         }
     }
-
 
     /**
      * @hidden
