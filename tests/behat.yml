@@ -5,7 +5,7 @@ default:
   formatter:
     name: pretty
   extensions:
-  Behat\MinkExtension\Extension:
+    Behat\MinkExtension\Extension:
       default_session: selenium2
       goutte: null
       selenium2: ~
