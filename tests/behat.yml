@@ -5,14 +5,7 @@ default:
   formatter:
     name: pretty
   extensions:
-    OrangeDigital\BusinessSelectorExtension\Extension:
-              urlFilePath: tests/urls.yml
-              selectorFilePath: tests/selectors.yml
-              assetPath: path
-              timeout: 30
-              contexts:
-                UIBusinessSelector: ~
-    Behat\MinkExtension\Extension:
+  Behat\MinkExtension\Extension:
       default_session: selenium2
       goutte: null
       selenium2: ~
