@@ -123,6 +123,13 @@ class FeatureContext extends MinkContext
         sleep(4);
     }
 
+    /**
+     * @when /^I wait for "([^"]*)" seconds$/
+     */
+    public function iWaitForSeconds($arg)
+    {
+        sleep($arg);
+    }
 
     /**
      * @When /^I press the xpath "([^"]*)"$/

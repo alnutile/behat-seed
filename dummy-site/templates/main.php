@@ -226,7 +226,7 @@
                 </p>
             </div>
         </div>
-    </div> <a class="left carousel-control" href="#carousel-101416" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-101416" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div> <a name="prev-slide" class="left carousel-control" href="#carousel-101416" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-101416" data-slide="next" id="next-slide"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
 <div class="alert alert-success alert-dismissable">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
