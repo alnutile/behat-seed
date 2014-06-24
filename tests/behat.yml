@@ -12,6 +12,27 @@ default:
       base_url: 'http://localhost:8080'
       browser_name: safari
 
+sahi:
+  extensions:
+    Behat\MinkExtension\Extension:
+      default_session: sahi
+      goutte: null
+      sahi: ~
+
+phantom:
+  extensions:
+    Behat\MinkExtension\Extension:
+      default_session: selenium2
+      goutte: null
+      selenium2:
+        wd_host: "http://localhost:8643/wd/hub"
+
+staging:
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: 'http://staging.example.com'
+      browser_name: safari
+
 saucelabs:
   extensions:
     Behat\MinkExtension\Extension:
