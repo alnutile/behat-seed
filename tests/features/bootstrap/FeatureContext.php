@@ -59,7 +59,7 @@ class FeatureContext extends MinkContext
      */
     public function __construct(array $parameters)
     {
-
+        $this->useContext('BusinessSelectors', new BusinessSelectorContext($parameters));
     }
 
     /**
@@ -120,7 +120,7 @@ class FeatureContext extends MinkContext
      */
     public function iWait()
     {
-        sleep(4);
+        sleep(2);
     }
 
     /**

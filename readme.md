@@ -135,6 +135,21 @@ default:
       base_url: 'http://localhost:8080'
       browser_name: safari
 
+withtokens:
+  context:
+    parameters:
+      javascript_session: selenium2
+      browser: safari
+      show_cmd: open %s
+  extensions:
+    OrangeDigital\BusinessSelectorExtension\Extension:
+      urlFilePath: tests/urls.yml
+      selectorFilePath: tests/selectors.yml
+      assetPath: path
+      timeout: 30
+      contexts:
+        UIBusinessSelector: ~
+
 saucelabs:
   extensions:
     Behat\MinkExtension\Extension:
@@ -192,6 +207,31 @@ Even just testing linux/Mac so you can see that level of work.
 ~~~
 bin/behat --config tests/behat.yml tests/features/pure_behat.feature
 ~~~
+
+## With Tokens
+
+You will see the above section for tokens in the behat.yml file
+Those files in tests/ folder selectors.yml and urls.yml are where you can place those tokens.
+
+When you run
+
+~~~
+bin/behat --config=tests/behat.yml --profile=withtokens tests/features/local_with_tokens.feature
+~~~
+
+we then use those tokens to fill in, for example though the value being inserted might be limited for this library. See the libraries
+help for that [https://github.com/orangedigital/business-selector-extension](https://github.com/orangedigital/business-selector-extension)
+
+Secondly
+
+~~~
+"And I should see "foobaz" on the page
+~~~
+
+Is one example of using a tooken to look for a world also seen in the selectors.yml.
+
+See tests/selectors.yml for related tokens
+
 
 ## RoadMap
 

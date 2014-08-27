@@ -20,8 +20,8 @@ withtokens:
       show_cmd: open %s
   extensions:
     OrangeDigital\BusinessSelectorExtension\Extension:
-      urlFilePath: tests/urls.yml
-      selectorFilePath: tests/selectors.yml
+      urlFilePath: urls.yml
+      selectorFilePath: selectors.yml
       assetPath: path
       timeout: 30
       contexts:

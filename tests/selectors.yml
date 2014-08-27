@@ -7,6 +7,9 @@ cars: "form#name_form select[name=cars]"
 terms: "form#name_form input[name=terms]"
 adverts: "form#name_form input[name=adverts]"
 file upload input: "form#name_form input[name=file_upload]"
+email box: "form#email-form input#exampleInputEmail1"
+some_email: "foo@foo.com"
+foobaz: "Hello"
 
 #Elements Selectors
 Page: "div.main"
