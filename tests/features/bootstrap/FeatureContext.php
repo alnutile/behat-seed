@@ -181,6 +181,17 @@ class FeatureContext extends MinkContext
     }
 
     /**
+     * @Given /^I submit the form with an id of "([^"]*)"$/
+     */
+    public function iSubmitTheFormWithAnIdOf($arg1)
+    {
+        $js = <<<HEREDOC
+        jQuery('form#$arg1').submit();
+HEREDOC;
+        $this->getSession()->executeScript($js);
+    }
+
+    /**
      * @Then /^I fill in wysiwyg on field "([^"]*)" with "([^"]*)"$/
      */
     public function iFillInWysiwygOnFieldWith($arg, $arg2)

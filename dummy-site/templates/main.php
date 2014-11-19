@@ -136,7 +136,7 @@
         <a href="#">Next</a>
     </li>
 </ul>
-<form role="form" id="email-form">
+<form role="form" id="email-form" action="/submitted">
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label><input type="email" class="form-control" id="exampleInputEmail1" />
     </div>
