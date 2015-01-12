@@ -8,7 +8,7 @@
         "behat/mink-goutte-driver": "1.1.*@dev",
         "behat/mink-selenium2-driver": "1.2.*@dev",
         "behat/mink-browserkit-driver": "1.2.*@dev",
-        "behat/mink-extension": "1.3.*@dev"
+        "behat/mink-extension": "1.3.*@dev",
         "behat/mink-zombie-driver": "*",
         "guzzlehttp/guzzle": "4.*"
     }
